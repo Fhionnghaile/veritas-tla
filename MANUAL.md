@@ -11,6 +11,9 @@ A formal model of the Veritas verifier, checked exhaustively by a model checker.
 ## 3. Demo
 The TLC transcripts in `results/` (`correct.txt`, `no_revocation.txt`, `no_expiry.txt`).
 
+![Real test run, captured 21 Nov 2026](docs/test-run.svg)
+*Real output from this repository's own tests, captured 21 Nov 2026.*
+
 ## 4. Run it yourself
 **Prerequisites:** A JVM. `run-checks.sh` downloads tla2tools.jar if needed.
 
