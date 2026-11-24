@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: fhionnghaile/veritas, path: veritas }
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: "17" }
-      - name: Run TLC model checks
-        run: bash run-checks.sh
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: "8.3", extensions: sodium }
+      - name: Model checks + trace validation against the real verifier
+        run: REQUIRE_TRACE=1 VERITAS_SRC=veritas/src bash run-checks.sh

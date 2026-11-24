@@ -16,6 +16,11 @@
 (* TRUE the invariant holds across every interleaving of issue/revoke/tick/*)
 (* verify. Turning a guard off makes TLC exhibit a concrete counterexample *)
 (* trace -- a machine proof that the guard is NECESSARY, not just present. *)
+(*                                                                         *)
+(* EXPIRY BOUNDARY: a credential is valid up to and including its exp      *)
+(* second, matching the Veritas format ("expired iff exp < now") and all   *)
+(* four reference verifiers. Trace validation (trace/) caught the earlier  *)
+(* version of this model using the stricter time < exp rule.              *)
 (***************************************************************************)
 EXTENDS Naturals, FiniteSets
 
@@ -65,14 +70,14 @@ Tick ==
 (* The verifier accepts iff the recognised credential passes each ENABLED guard. *)
 Accepts(c) ==
     /\ c \in issued
-    /\ (CheckExpiry => time < exp[c])
+    /\ (CheckExpiry => time <= exp[c])   \* valid up to and including exp (Veritas format: expired iff exp < now)
     /\ (CheckRevocation => c \notin revoked)
 
 Verify(c) ==
     /\ Accepts(c)
     /\ lastAccepted' = TRUE
     /\ lastRevoked'  = (c \in revoked)
-    /\ lastExpired'  = ((c \notin issued) \/ (time >= exp[c]))
+    /\ lastExpired'  = ((c \notin issued) \/ (time > exp[c]))
     /\ UNCHANGED <<time, issued, exp, revoked>>
 
 Next ==
