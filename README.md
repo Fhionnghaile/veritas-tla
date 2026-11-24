@@ -4,7 +4,7 @@
 > **A machine-checked proof that a revoked or expired credential never verifies.**  
 > **Result:** TLC: no violation across every reachable state at two bounds; counterexamples prove each guard necessary; a cached-revocation model proves bounded staleness; trace validation replays every model state against the real Veritas verifier.  
 > **Reproduce:** `bash run-checks.sh` (or `bash run-all-docker.sh`)  
-> ![CI](https://github.com/fhionnghaile/veritas-tla/actions/workflows/ci.yml/badge.svg)
+> ![CI](https://github.com/fhionnghaile/veritas-tla/actions/workflows/ci.yml/badge.svg) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fhionnghaile/veritas-tla/badge)](https://scorecard.dev/viewer/?uri=github.com/Fhionnghaile/veritas-tla)
 >
 > **What this is worth:** Turns 'we check revocation' into 'removing the check is provably unsafe, here is the trace' — the strongest correctness signal there is.
 
