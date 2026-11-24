@@ -1,0 +1,3 @@
+15966 reachable states x credentials = 47898 decisions checked against the real verifier
+agree: 47898   disagree: 0
+TRACE VALIDATION PASS: the PHP verifier matches the model in every reachable state

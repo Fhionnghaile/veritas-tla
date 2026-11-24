@@ -1,8 +1,16 @@
 TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
-Running breadth-first search Model-Checking with fp 2 and seed -7583376067748409118 with 1 worker on 2 cores with 1496MB heap and 64MB offheap memory [pid: 722] (Linux 6.18.44-fc-v470 amd64, Ubuntu 21.0.12.1 x86_64, MSBDiskFPSet, DiskStateQueue).
-Starting... (2026-11-16 00:16:16)
+Running breadth-first search Model-Checking with fp 48 and seed -4958182162826864039 with 1 worker on 4 cores with 1726MB heap and 64MB offheap memory [pid: 126] (Linux 6.18.58.1-microsoft-standard-WSL2 amd64, Eclipse Adoptium 21.0.13.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /w/VeritasRevocation.tla
+Parsing file /tmp/Naturals.tla
+Parsing file /tmp/FiniteSets.tla
+Parsing file /tmp/Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module VeritasRevocation
+Starting... (2026-11-24 18:42:32)
 Computing initial states...
-Finished computing initial states: 1 distinct state generated at 2026-11-16 00:16:16.
+Finished computing initial states: 1 distinct state generated at 2026-11-24 18:42:33.
 Error: Invariant SafeAccept is violated.
 Error: The behavior up to this point is:
 State 1: <Initial predicate>
@@ -14,7 +22,7 @@ State 1: <Initial predicate>
 /\ lastRevoked = FALSE
 /\ issued = {}
 
-State 2: <Issue line 49, col 5 to line 52, col 74 of module VeritasRevocation>
+State 2: <Issue line 54, col 5 to line 57, col 74 of module VeritasRevocation>
 /\ revoked = {}
 /\ exp = (c1 :> 1 @@ c2 :> 3)
 /\ lastAccepted = FALSE
@@ -23,7 +31,7 @@ State 2: <Issue line 49, col 5 to line 52, col 74 of module VeritasRevocation>
 /\ lastRevoked = FALSE
 /\ issued = {c1}
 
-State 3: <Tick line 61, col 5 to line 63, col 81 of module VeritasRevocation>
+State 3: <Tick line 66, col 5 to line 68, col 81 of module VeritasRevocation>
 /\ revoked = {}
 /\ exp = (c1 :> 1 @@ c2 :> 3)
 /\ lastAccepted = FALSE
@@ -32,16 +40,25 @@ State 3: <Tick line 61, col 5 to line 63, col 81 of module VeritasRevocation>
 /\ lastRevoked = FALSE
 /\ issued = {c1}
 
-State 4: <Verify line 72, col 5 to line 76, col 47 of module VeritasRevocation>
+State 4: <Tick line 66, col 5 to line 68, col 81 of module VeritasRevocation>
+/\ revoked = {}
+/\ exp = (c1 :> 1 @@ c2 :> 3)
+/\ lastAccepted = FALSE
+/\ time = 2
+/\ lastExpired = FALSE
+/\ lastRevoked = FALSE
+/\ issued = {c1}
+
+State 5: <Verify line 77, col 5 to line 81, col 47 of module VeritasRevocation>
 /\ revoked = {}
 /\ exp = (c1 :> 1 @@ c2 :> 3)
 /\ lastAccepted = TRUE
-/\ time = 1
+/\ time = 2
 /\ lastExpired = TRUE
 /\ lastRevoked = FALSE
 /\ issued = {c1}
 
-88 states generated, 51 distinct states found, 37 states left on queue.
-The depth of the complete state graph search is 4.
-The average outdegree of the complete state graph is 4 (minimum is 1, the maximum 7 and the 95th percentile is 7).
-Finished in 00s at (2026-11-16 00:16:16)
+306 states generated, 121 distinct states found, 70 states left on queue.
+The depth of the complete state graph search is 5.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 7 and the 95th percentile is 5).
+Finished in 01s at (2026-11-24 18:42:33)

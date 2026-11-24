@@ -1,0 +1,91 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 125 and seed -4281588260947811162 with 1 worker on 4 cores with 1726MB heap and 64MB offheap memory [pid: 202] (Linux 6.18.58.1-microsoft-standard-WSL2 amd64, Eclipse Adoptium 21.0.13.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /w/VeritasRevocationCache.tla
+Parsing file /tmp/Naturals.tla
+Parsing file /tmp/FiniteSets.tla
+Parsing file /tmp/Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module VeritasRevocationCache
+Starting... (2026-11-24 18:42:37)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-24 18:42:37.
+Error: Invariant BoundedStaleness is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {}
+/\ exp = (c1 :> 4 @@ c2 :> 4)
+/\ lastAccepted = FALSE
+/\ time = 0
+/\ lastRevoked = FALSE
+/\ lastStaleRevoked = FALSE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {}
+
+State 2: <Issue line 53, col 5 to line 56, col 106 of module VeritasRevocationCache>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {}
+/\ exp = (c1 :> 2 @@ c2 :> 4)
+/\ lastAccepted = FALSE
+/\ time = 0
+/\ lastRevoked = FALSE
+/\ lastStaleRevoked = FALSE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {c1}
+
+State 3: <Revoke line 59, col 5 to line 63, col 99 of module VeritasRevocationCache>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {c1}
+/\ exp = (c1 :> 2 @@ c2 :> 4)
+/\ lastAccepted = FALSE
+/\ time = 0
+/\ lastRevoked = FALSE
+/\ lastStaleRevoked = FALSE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {c1}
+
+State 4: <Tick line 71, col 5 to line 73, col 113 of module VeritasRevocationCache>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {c1}
+/\ exp = (c1 :> 2 @@ c2 :> 4)
+/\ lastAccepted = FALSE
+/\ time = 1
+/\ lastRevoked = FALSE
+/\ lastStaleRevoked = FALSE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {c1}
+
+State 5: <Tick line 71, col 5 to line 73, col 113 of module VeritasRevocationCache>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {c1}
+/\ exp = (c1 :> 2 @@ c2 :> 4)
+/\ lastAccepted = FALSE
+/\ time = 2
+/\ lastRevoked = FALSE
+/\ lastStaleRevoked = FALSE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {c1}
+
+State 6: <Verify line 84, col 5 to line 88, col 74 of module VeritasRevocationCache>
+/\ revokedAt = (c1 :> 0 @@ c2 :> 0)
+/\ revoked = {c1}
+/\ exp = (c1 :> 2 @@ c2 :> 4)
+/\ lastAccepted = TRUE
+/\ time = 2
+/\ lastRevoked = TRUE
+/\ lastStaleRevoked = TRUE
+/\ cache = {}
+/\ cacheAt = 0
+/\ issued = {c1}
+
+2539 states generated, 1026 distinct states found, 663 states left on queue.
+The depth of the complete state graph search is 6.
+The average outdegree of the complete state graph is 3 (minimum is 0, the maximum 9 and the 95th percentile is 5).
+Finished in 01s at (2026-11-24 18:42:37)
