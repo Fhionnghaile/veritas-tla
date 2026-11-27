@@ -6,7 +6,7 @@
 > **Reproduce:** `bash run-checks.sh` (or `bash run-all-docker.sh`)  
 > ![CI](https://github.com/fhionnghaile/veritas-tla/actions/workflows/ci.yml/badge.svg) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fhionnghaile/veritas-tla/badge)](https://scorecard.dev/viewer/?uri=github.com/Fhionnghaile/veritas-tla)
 >
-> **What this is worth:** Turns 'we check revocation' into 'removing the check is provably unsafe, here is the trace' — the strongest correctness signal there is.
+> **What this is worth:** Every one of 47,898 model decisions matches the shipped verifier, and removing either check produces the exact attack trace: correctness shown, not asserted.
 
 
 **Claim.** The [Veritas](../Veritas) credential verifier never accepts a credential that
