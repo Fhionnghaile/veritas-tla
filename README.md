@@ -108,8 +108,7 @@ runs the model checks **and** the trace validation (checking out the Veritas rep
 
 ## Why this is a technical-depth proof
 
-Formal verification is the strongest correctness signal in security engineering, and
-almost no practitioner reaches for it. Modelling a real protocol, stating a safety
-property, and having a model checker both confirm it and generate counterexamples for the
-broken variants demonstrates a way of thinking about correctness — under adversarial
-interleaving — that a 20-year researcher recognises immediately.
+Formal verification is among the strongest correctness evidence available, and it is rarely used
+outside specialist teams. Modelling a real protocol, stating a safety property, and having a model
+checker both confirm it and generate counterexamples for the broken variants shows reasoning about
+correctness under adversarial interleaving, not only under the cases someone thought to test.
